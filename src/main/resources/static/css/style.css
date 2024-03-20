@@ -1,0 +1,110 @@
+
+/* 设置用户发送消息的样式 */
+.user-message {
+    background-color: #4CAF50; /* 绿色背景 */
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    white-space: pre;
+}
+
+/* 设置ChatGPT发送消息的样式 */
+.bot-message {
+    background-color: #f2f2f2; /* 灰色背景 */
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    white-space: pre
+}
+
+.question-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.question {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.question td:first-child {
+    margin-left: auto;
+}
+
+.answer-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.answer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.answer td:last-child {
+    margin-left: auto;
+}
+
+/* 设置提问和回复消息的表格样式 */
+.question, .answer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* 设置输入框和发送按钮的样式 */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
+}
+
+.form-row {
+    display: flex;
+    flex: 1;
+}
+
+.form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.message-container {
+    max-height: 700px; /* 设置最大高度，超出部分可滚动 */
+    overflow-y: auto; /* 竖直方向溢出部分可滚动 */
+}
+
+.send-message-container {
+    flex: 1; /* 占据剩余空间 */
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+textarea {
+    width: 1800px; /* 设置输入框的宽度为300像素，您可以根据需要调整这个值 */
+    height: 100px; /* 设置输入框的高度为200像素，您可以根据需要调整这个值 */
+    font-size: 16px; /* 设置输入框中文字的字体大小为16像素，您可以根据需要调整这个值 */
+    resize: none; /* 禁止用户调整输入框的尺寸 */
+}
+
+

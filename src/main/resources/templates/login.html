@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<title>AI对话</title>
+	</head>
+
+	<body>
+		<div class="chat-container">
+			<h1 class="title">登录</h1>
+
+			<div class="login-container">
+				<form th:action="@{/login}" method="post">
+					<div class="form-container">
+						<div class="form-row">
+                             <span class="form-group no-border">
+                                <input id="username" name="username" placeholder="输入用户名">
+                             </span>
+							<button>登录</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+		</div>
+	</body>
+
+
+</html>

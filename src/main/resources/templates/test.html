@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+
+		<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+
+	</head>
+	<body>
+		<div class="test" th:utext="${botMessage}"></div>
+
+	</body>
+
+	<script>
+        var md = window.markdownit();
+        var result = md.render('```java\n' +
+            'public class BubbleSort {\n' +
+            '    public static void main(String[] args) {\n' +
+            '        int[] arr = {5, 3, 8, 4, 2, 7, 6};\n' +
+            '        bubbleSort(arr);\n' +
+            '        System.out.println("排序后的数组：");\n' +
+            '        printArray(arr);\n' +
+            '    }\n' +
+            '\n' +
+            '    public static void bubbleSort(int[] arr) {\n' +
+            '        int n = arr.length;\n' +
+            '        for (int i = 0; i < n - 1; i++) {\n' +
+            '            for (int j = 0; j < n - i - 1; j++) {\n' +
+            '                if (arr[j] > arr[j + 1]) {\n' +
+            '                    // 交换 arr[j] 和 arr[j+1]\n' +
+            '                    int temp = arr[j];\n' +
+            '                    arr[j] = arr[j + 1];\n' +
+            '                    arr[j + 1] = temp;\n' +
+            '                }\n' +
+            '            }\n' +
+            '        }\n' +
+            '    }\n' +
+            '\n' +
+            '    public static void printArray(int[] arr) {\n' +
+            '        for (int i : arr) {\n' +
+            '            System.out.print(i + " ");\n' +
+            '        }\n' +
+            '        System.out.println();\n' +
+            '    }\n' +
+            '}\n' +
+            '```');
+
+        var test = document.querySelector(".test");
+
+        test.innerHTML = result;
+
+        console.log(result);
+	</script>
+</html>

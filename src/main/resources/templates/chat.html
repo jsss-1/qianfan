@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<title>AI对话</title>
+
+	</head>
+
+	<body>
+		<div class="chat-container">
+			<h1 class="title">AI 对话</h1>
+
+			<div class="message-container">
+				<!-- 用户消息和ChatGPT消息显示部分 -->
+				<div th:each="conversation:${conversations}">
+
+					<div class="question-container">
+						<table class="question">
+							<td>
+								<span th:utext="${conversation.createTime}"></span>
+								<div class="user-message" th:utext="${conversation.userMessage}"></div>
+							</td>
+							<td type="text" th:text="${conversation.username}">提问</td>
+						</table>
+					</div>
+
+					<div class="answer-container">
+						<table class="answer">
+							<td type="text">AI</td>
+							<td>
+								<span th:utext="${conversation.createTime}"></span>
+								<div class="bot-message" th:utext="${conversation.botMessage}"></div>
+							</td>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="send-message-container">
+				<!-- 发送消息部分 -->
+				<form th:action="@{/chat/chat}" method="post">
+					<div class="form-container">
+						<div class="form-row">
+                             <span class="form-group no-border">
+                                <textarea id="messageInput" placeholder="问我任何问题...(Shift + Enter 换行，按下Enter 发送)"></textarea>
+                             </span>
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+		</div>
+
+
+
+	</body>
+
+
+	<script th:src="@{/js/onload.js}"></script>
+
+	<script th:src="@{/js/textarea.js}"></script>
+
+
+
+
+</html>
